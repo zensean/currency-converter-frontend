@@ -1,15 +1,16 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <router-view @updateUserStatus="updateUserStatus"></router-view> <!-- 监听登录状态的变化 -->
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  methods: {
+    updateUserStatus() {
+      // 可以在此处重新拉取用户信息或更新全局状态
+      console.log("User status updated, possibly logged in or logged out.");
+    }
   }
 }
 </script>
